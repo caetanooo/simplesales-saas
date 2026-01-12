@@ -1,7 +1,8 @@
-from fastapi import FastAPI  
+from fastapi import FastAPI
 
-app = FastAPI(tittle="Simplesales API") 
+app = FastAPI()
 
-@app.get("/") 
-def root(): 
-    return {"message:" "SimpleSales API esta rodadndo"} 
+@app.get("/")
+def root():
+    return {"ok": True} 
+
