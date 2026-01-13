@@ -1,8 +1,12 @@
-from fastapi import FastAPI
+from fastapi import FastAPI 
+from app.database import engine 
+from app.models import Base 
 
-app = FastAPI()
+app = FastAPI(title="SaaS MVP API") 
 
-@app.get("/")
-def root():
-    return {"ok": True} 
+Base.metadata.create_all(bind=engine) 
+
+app.get("/") 
+def root(): 
+    return {"status": "API running"} 
 
